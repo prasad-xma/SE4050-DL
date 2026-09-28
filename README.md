@@ -102,7 +102,6 @@ SE4050-DL/
 ├── results/
 │   ├── preprocessing/           Class distribution of each split
 │   └── autoencoder/             Config, histories, tuning table, metrics and figures
-├── report/                      Report section drafts
 ├── requirements.txt
 └── README.md
 ```
