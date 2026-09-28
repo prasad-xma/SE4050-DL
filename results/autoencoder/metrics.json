@@ -1,0 +1,67 @@
+{
+  "model": "Denoising Autoencoder + Classifier",
+  "config": {
+    "random_state": 42,
+    "encoder_layers": [
+      128,
+      64
+    ],
+    "latent_size": 32,
+    "classifier_layers": [
+      64,
+      32
+    ],
+    "noise_std": 0.0,
+    "dropout": 0.2,
+    "batch_size": 1024,
+    "pretrain_epochs": 10,
+    "pretrain_learning_rate": 0.001,
+    "finetune_epochs": 20,
+    "encoder_learning_rate": 0.0001,
+    "classifier_learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "reconstruction_weight": 0.1,
+    "early_stopping_patience": 4
+  },
+  "best_validation_macro_f1": 0.6294935587648101,
+  "multiclass": {
+    "accuracy": 0.9282280716708328,
+    "balanced_accuracy": 0.9685185488547678,
+    "macro_precision": 0.5336329005451536,
+    "macro_recall": 0.9685185488547678,
+    "macro_f1": 0.6034412281995694,
+    "weighted_f1": 0.9433686692731734
+  },
+  "binary": {
+    "precision": 0.7045255014991137,
+    "recall_detection_rate": 0.9986733352117968,
+    "f1": 0.8261992870810144,
+    "roc_auc": 0.9954852197411101,
+    "pr_auc": 0.979416098675288,
+    "false_positive_rate": 0.08508288873996236,
+    "mcc": 0.8021089319946181,
+    "true_negative": 383622,
+    "false_positive": 35675,
+    "false_negative": 113,
+    "true_positive": 85063
+  },
+  "efficiency": {
+    "total_parameters": 43694,
+    "encoder_parameters": 19680,
+    "decoder_parameters": 19333,
+    "classifier_parameters": 4681,
+    "inference_parameters": 24361,
+    "model_file_mb": 0.18188953399658203,
+    "pretrain_seconds": 584.3846154999919,
+    "finetune_seconds": 1108.2280495000014,
+    "total_training_seconds": 1692.6126649999933,
+    "best_epoch": 15,
+    "epochs_run": 19,
+    "test_inference_seconds": 4.0678529999859165,
+    "inference_ms_per_1000_flows": 8.063569308934108,
+    "device": "cpu"
+  },
+  "reconstruction_error_roc_auc": 0.6984672959163847,
+  "silhouette_input": 0.09683443605899811,
+  "silhouette_latent": 0.2591376304626465
+}
