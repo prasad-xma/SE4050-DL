@@ -10,6 +10,73 @@ The current project scope is:
 2. Train the first model, a Multilayer Perceptron (MLP).
 3. Save the trained model for later comparison with the other group models.
 
+## Start after cloning the repository
+
+### 1. Clone and open the project
+
+```powershell
+git clone https://github.com/prasad-xma/SE4050-DL.git
+cd SE4050-DL
+```
+
+### 2. Create a virtual environment
+
+Python 3.12 is recommended.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+The `.venv` folder is local and is not included when the repository is cloned.
+
+### 3. Install the required packages
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+If PowerShell does not allow environment activation, use the environment's Python directly:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+### 4. Create the local data and model folders
+
+```powershell
+New-Item -ItemType Directory -Force data, models
+```
+
+These folders may be empty after cloning because large data and trained-model files are not stored on GitHub.
+
+### 5. Obtain the required data
+
+Choose one of these workflows:
+
+**Run the complete preprocessing:**
+
+1. Obtain `CICIDS2017_combined.csv` from the group owner or the approved dataset source.
+2. Place it at `data/CICIDS2017_combined.csv`.
+3. Run `notebooks/01_Data_Preprocessing.ipynb`.
+
+**Start directly with model training:**
+
+1. Obtain `processed_data.npz` from the group member responsible for preprocessing.
+2. Place it at `data/processed_data.npz`.
+3. Obtain `label_encoder.joblib` and place it inside `models/`.
+4. Run the assigned model notebook. The MLP notebook is `notebooks/02_MLP_Model.ipynb`.
+
+Do not create a different train/test split for each model. Every group member must use the same processed dataset.
+
+### 6. Start Jupyter
+
+```powershell
+python -m jupyter notebook
+```
+
+Then open the required notebook and run its cells from top to bottom.
+
 ## Folder structure
 
 ```text
@@ -30,35 +97,6 @@ SE4050-DL/
 ```
 
 Only the original CSV exists before preprocessing. The other files shown above are created when the notebooks run.
-
-## Environment setup
-
-The `.venv` is already configured on the main project computer. To activate it:
-
-```powershell
-cd C:\Users\prasa\Documents\SLIIT\DL\SE4050-DL
-.\.venv\Scripts\Activate.ps1
-```
-
-Each group member should create their own `.venv` instead of copying this folder:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-```
-
-The `.venv` folder and large dataset files are excluded from GitHub.
-
-## Start Jupyter
-
-After activating the environment:
-
-```powershell
-jupyter notebook
-```
-
-The installed PyTorch version currently uses the CPU. Training will work, but it will be slower than training with a CUDA GPU.
 
 ## Notebook 01: data preprocessing
 
@@ -150,3 +188,4 @@ Each member trains and saves their model separately in `models/`. The models are
 - Do not change the shared test set.
 - Accuracy alone is not sufficient because CICIDS2017 is highly imbalanced.
 - Ensure the computer has enough free disk space and memory before processing the complete dataset.
+- The main project computer currently uses CPU-only PyTorch, so model training will be slower than on a CUDA GPU.
