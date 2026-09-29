@@ -1009,18 +1009,40 @@ elif nav_selection == "📈 Forensic Visual Analytics":
         st.markdown("#### Training and Validation Learning Curves")
         c1, c2 = st.columns(2)
         with c1:
-            st.markdown("**TabNet Training Curves**")
+            st.markdown("**FT-Transformer (Self-Attention)**")
+            p_ft_lc = models_registry['ft_transformer']['path'] / 'learning_curve.png'
+            if not p_ft_lc.exists():
+                p_ft_lc = models_registry['ft_transformer']['path'] / 'learning_curves.png'
+            if p_ft_lc.exists():
+                st.image(str(p_ft_lc), use_container_width=True)
+            else:
+                st.info("Learning curve plot unavailable.")
+
+            st.markdown("**Denoising Autoencoder Pretraining & Fine-Tuning Curves**")
+            p_ae_lc = models_registry['autoencoder']['path'] / 'learning_curves.png'
+            if not p_ae_lc.exists():
+                p_ae_lc = models_registry['autoencoder']['path'] / 'learning_curve.png'
+            if p_ae_lc.exists():
+                st.image(str(p_ae_lc), use_container_width=True)
+            else:
+                st.info("Learning curve plot unavailable.")
+
+        with c2:
+            st.markdown("**TabNet (Attentive Feature Selection)**")
             p_tab_lc = models_registry['tabnet']['path'] / 'learning_curves.png'
+            if not p_tab_lc.exists():
+                p_tab_lc = models_registry['tabnet']['path'] / 'learning_curve.png'
             if p_tab_lc.exists():
                 st.image(str(p_tab_lc), use_container_width=True)
             else:
                 st.info("Learning curve plot unavailable.")
 
-        with c2:
-            st.markdown("**Autoencoder Pretraining & Fine-Tuning Curves**")
-            p_ae_lc = models_registry['autoencoder']['path'] / 'learning_curves.png'
-            if p_ae_lc.exists():
-                st.image(str(p_ae_lc), use_container_width=True)
+            st.markdown("**Multilayer Perceptron (MLP Baseline)**")
+            p_mlp_lc = models_registry['mlp']['path'] / 'learning_curves.png'
+            if not p_mlp_lc.exists():
+                p_mlp_lc = models_registry['mlp']['path'] / 'learning_curve.png'
+            if p_mlp_lc.exists():
+                st.image(str(p_mlp_lc), use_container_width=True)
             else:
                 st.info("Learning curve plot unavailable.")
 
