@@ -1,0 +1,48 @@
+{
+  "model": "MLP / DNN",
+  "evaluation_split": "shared X_test and y_test from data/processed_data.npz",
+  "class_names": [
+    "BENIGN",
+    "Botnet",
+    "Brute Force",
+    "DDoS",
+    "DoS",
+    "Heartbleed",
+    "Infiltration",
+    "PortScan",
+    "Web Attack"
+  ],
+  "multiclass": {
+    "accuracy": 0.9374198420926393,
+    "macro_precision": 0.4772911753899114,
+    "macro_recall": 0.9541416629421605,
+    "macro_f1": 0.5531347135706915,
+    "weighted_precision": 0.9678005853267148,
+    "weighted_recall": 0.9374198420926393,
+    "weighted_f1": 0.9489523838952707,
+    "balanced_accuracy": 0.9541416629421605
+  },
+  "binary_benign_vs_attack": {
+    "precision": 0.7314639437977822,
+    "recall_detection_rate": 0.9974758147835071,
+    "f1": 0.8440058014781848,
+    "roc_auc": 0.9955890288556197,
+    "pr_auc": 0.9785601652955963,
+    "false_positive_rate": 0.0743887983935015,
+    "mcc": 0.8213974603695509,
+    "true_negative": 388106,
+    "false_positive": 31191,
+    "false_negative": 215,
+    "true_positive": 84961
+  },
+  "efficiency": {
+    "training_seconds": null,
+    "inference_seconds": 0.4078404999454506,
+    "inference_ms_per_1000_samples": 0.8084486185493586,
+    "trainable_parameters": 59657,
+    "model_file_bytes": 242345,
+    "model_file_mb": 0.23111820220947266,
+    "batch_size": 1024,
+    "device": "cpu"
+  }
+}
