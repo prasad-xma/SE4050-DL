@@ -1,0 +1,20 @@
+{
+  "model": "FT-Transformer",
+  "n_features": 69,
+  "n_classes": 9,
+  "d_token": 64,
+  "n_blocks": 3,
+  "n_heads": 4,
+  "ffn_factor": 2.0,
+  "attention_dropout": 0.15,
+  "ffn_dropout": 0.15,
+  "residual_dropout": 0.1,
+  "head_dropout": 0.2,
+  "head_hidden_dim": 64,
+  "batch_size": 1024,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "epochs": 15,
+  "optimizer": "AdamW",
+  "loss": "Weighted CrossEntropyLoss"
+}

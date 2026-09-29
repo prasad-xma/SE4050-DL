@@ -1,0 +1,55 @@
+{
+  "model": "FT-Transformer",
+  "config": {
+    "model": "FT-Transformer",
+    "n_features": 69,
+    "n_classes": 9,
+    "d_token": 64,
+    "n_blocks": 3,
+    "n_heads": 4,
+    "ffn_factor": 2.0,
+    "attention_dropout": 0.15,
+    "ffn_dropout": 0.15,
+    "residual_dropout": 0.1,
+    "head_dropout": 0.2,
+    "head_hidden_dim": 64,
+    "batch_size": 1024,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0001,
+    "epochs": 15,
+    "optimizer": "AdamW",
+    "loss": "Weighted CrossEntropyLoss"
+  },
+  "multiclass": {
+    "accuracy": 0.9543602928204284,
+    "balanced_accuracy": 0.9735353559561515,
+    "macro_precision": 0.5980061242005829,
+    "macro_recall": 0.9735353559561515,
+    "macro_f1": 0.6568416999225154,
+    "weighted_precision": 0.9805519224795086,
+    "weighted_recall": 0.9543602928204284,
+    "weighted_f1": 0.9654304254844626
+  },
+  "binary_benign_vs_attack": {
+    "precision": 0.7884389100443802,
+    "recall_detection_rate": 0.9990725086878933,
+    "f1": 0.8813455752510266,
+    "roc_auc": 0.9967614480081065,
+    "pr_auc": 0.9857805669130898,
+    "false_positive_rate": 0.05445781868222287,
+    "mcc": 0.8628921069930736,
+    "true_negative": 396463,
+    "false_positive": 22834,
+    "false_negative": 79,
+    "true_positive": 85097
+  },
+  "efficiency": {
+    "trainable_parameters": 114185,
+    "model_file_mb": 0.4516477584838867,
+    "training_seconds": 3120.0,
+    "inference_seconds": 268.9969394,
+    "inference_ms_per_1000_rows": 533.2236599381929,
+    "epochs_run": 15,
+    "device": "cpu"
+  }
+}
