@@ -1,0 +1,5 @@
+model,saved_metrics_model_name,class_count,class_order_verified
+MLP / DNN,MLP / DNN,9,True
+Denoising Autoencoder + Classifier,Denoising Autoencoder + Classifier,9,True
+TabNet,TabNet,9,True
+FT-Transformer,FT-Transformer,9,True
