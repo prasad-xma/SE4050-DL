@@ -1,0 +1,28 @@
+data:
+  processed_data_path: "data/processed_data.npz"
+  label_encoder_path: "models/label_encoder.joblib"
+
+model:
+  n_features: 69              # Number of input numerical flow features
+  n_classes: 9                # BENIGN + 8 attack families
+  d_token: 64                 # Embedding dimension per feature
+  n_blocks: 3                 # Number of Transformer layers (L)
+  n_heads: 4                  # Number of attention heads (64 / 4 = 16 per head)
+  ffn_factor: 2.0             # FFN hidden size = 64 * 2 = 128
+  attention_dropout: 0.15     # Dropout for self-attention
+  ffn_dropout: 0.15           # Dropout for FFN
+  residual_dropout: 0.10      # Dropout for residual connections
+  head_dropout: 0.20          # Dropout for classification head
+  head_hidden_dim: 64         # Hidden layer size in classification head
+
+training:
+  batch_size: 1024
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  epochs: 15
+  random_seed: 42
+  device: "cuda"
+
+output:
+  model_save_path: "models/ft_transformer_model.pt"
+  results_dir: "results/ft_transformer/"
