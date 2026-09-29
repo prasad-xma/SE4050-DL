@@ -1,0 +1,10 @@
+,BENIGN,Botnet,Brute Force,DDoS,DoS,Heartbleed,Infiltration,PortScan,Web Attack
+BENIGN,396463,10008,254,2084,2197,1,204,6295,1791
+Botnet,0,391,0,0,0,0,0,0,0
+Brute Force,12,0,1813,0,3,0,0,0,2
+DDoS,1,0,0,25601,1,0,0,0,0
+DoS,33,0,55,0,38651,0,0,0,11
+Heartbleed,0,0,0,0,0,2,0,0,0
+Infiltration,1,0,0,0,0,0,6,0,0
+PortScan,29,3,8,0,17,0,0,18104,3
+Web Attack,3,0,5,0,3,0,0,0,418
