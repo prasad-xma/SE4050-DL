@@ -1,0 +1,52 @@
+{
+  "model": "TabNet",
+  "selection_metric": "validation_macro_f1",
+  "class_weighting": "pytorch_tabnet balanced training sample weights (weights=1)",
+  "config": {
+    "n_d": 16,
+    "n_a": 16,
+    "n_steps": 3,
+    "gamma": 1.5,
+    "lambda_sparse": 0.0001,
+    "learning_rate": 0.02,
+    "batch_size": 4096,
+    "virtual_batch_size": 512,
+    "max_epochs": 50,
+    "patience": 8,
+    "seed": 42
+  },
+  "multiclass": {
+    "accuracy": 0.9717566648760191,
+    "macro_precision": 0.6640821061023244,
+    "macro_recall": 0.9445634483960905,
+    "macro_f1": 0.7158188290755454,
+    "weighted_precision": 0.9812615892889933,
+    "weighted_recall": 0.9717566648760191,
+    "weighted_f1": 0.9750399719052399,
+    "balanced_accuracy": 0.9445634483960905
+  },
+  "binary_benign_vs_attack": {
+    "precision": 0.8579423984510508,
+    "recall_detection_rate": 0.9988377007607777,
+    "f1": 0.9230443745253336,
+    "roc_auc": 0.9978337293472118,
+    "pr_auc": 0.9897331732105715,
+    "false_positive_rate": 0.03359671068478906,
+    "mcc": 0.9098820814774153,
+    "true_negative": 405210,
+    "false_positive": 14087,
+    "false_negative": 99,
+    "true_positive": 85077
+  },
+  "efficiency": {
+    "trainable_parameters": 29042,
+    "model_file_mb": 0.12158393859863281,
+    "training_seconds": 1350.8139293999993,
+    "inference_seconds": 7.491954599972814,
+    "inference_ms_per_1000_rows": 14.85105169151335,
+    "explainability_seconds": 0.10000009997747838,
+    "epochs_run": 26,
+    "best_validation_macro_f1": 0.7149893285885033,
+    "device": "cpu"
+  }
+}
