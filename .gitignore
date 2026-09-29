@@ -9,3 +9,5 @@ models/*
 results/**/*.npz
 
 .env
+
+executed_notebooks/
