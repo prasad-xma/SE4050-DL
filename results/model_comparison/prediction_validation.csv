@@ -1,0 +1,5 @@
+model,prediction_artifact,test_rows,prediction_validation_status,y_true_verified_against_reference
+MLP / DNN,test_predictions.csv,504473.0,Verified,True
+Denoising Autoencoder + Classifier,Unavailable,,Unavailable,False
+TabNet,test_predictions.csv,504473.0,Verified,True
+FT-Transformer,test_predictions.csv,504473.0,Verified,True
